@@ -1,0 +1,358 @@
+
+
+/* Add a black background color to the top navigation */
+.topbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topbar-right {
+  float: right;
+}
+
+.header {
+    text-decoration: none;
+	background: rgb(28, 30, 33);
+	height: 48px;
+	font-size: 0.8em;
+	margin-left: 0;
+	margin-right: 0;
+	min-width: 900px;
+}
+.user-info{
+    background-color:#0b133c;
+    height: 48px;
+    min-width: 100px;
+    margin-left: 80%;
+    margin-right: 0;
+    border-radius:10px;
+}
+
+.login a{
+	float:left;
+	font: normal 140% 'century gothic', actor,sans-serif;
+}
+
+.sing-up a{
+	float: right;
+	margin-right: 10px;
+	font: normal 140% 'century gothic', actor,sans-serif;
+}
+
+.user-info-form{
+	padding: 0 0 0 0;
+}
+
+.user-info-form h1{
+	color: #fff;
+	font: normal 140% 'century gothic', actor,sans-serif;
+	margin: 0 0 0 30px;
+	display:inline;
+}
+.user-info-form a{
+	text-decoration: none;
+	font: normal 140% 'century gothic', actor,sans-serif;
+	display:block;
+	color:coral;
+	margin: 0 0 0 70%
+}
+
+.user-info-form a:hover{
+	text-decoration: none;
+	font: normal 140% 'century gothic', actor,sans-serif;
+	display:block;
+	color:#3a1c11;
+	margin: 0 0 0 70%
+}
+
+.user-name{
+	display:inline-block;
+	font: normal 100% 'century gothic', actor,sans-serif;
+	color:#1ae6e6
+}
+
+.user-info-form-not-auth{
+	padding: 0px 0 0 40px;
+
+}
+
+.user-info-form-not-auth h1{
+	padding: 0px 0 0 0px;
+	color: #fff;
+	font: normal 140% 'century gothic', actor,sans-serif;
+	margin: 0 0 0 10px;
+}
+
+.user-info-form-not-auth a{
+	color: #FF5722;
+	text-decoration: none;
+}
+
+.user-info-form-not-auth a:hover{
+	color: #7f810e;
+	text-decoration: none;
+}
+
+
+.logo {
+    float: left;
+	margin-left: 5%;
+	width: 400px;
+	padding-bottom: 0px;
+}
+
+.logo h1, .logo h2 {
+	font: normal 200% 'century gothic', actor,sans-serif;
+	margin: 0 0 0 10px;
+}
+
+.logo-text h1, .logo-text h1 a, .logo-text h1 a:hover {
+	padding: 10px 0 0 0;
+	color: #fff;
+	letter-spacing: 0,1em;
+	text-decoration: none;
+}
+
+.logo-text h2 {
+	font-size: 0.9em;
+	color: #fff;
+}
+
+body {
+	background-color: #222222;
+}
+
+
+.main {
+	background-color:#222222;
+	margin-right: auto;
+	margin-left: auto;
+	color:#fff;
+}
+
+.menubar{
+	width: 900px;
+	height: 40px;
+	margin: auto;
+}
+
+ul.menu{
+	margin: auto;
+	float:right;
+}
+ul.menu li{
+	float: left;
+	list-style: none;
+	padding: 5px 20px 2px 20px;
+
+}
+
+ul.menu li a{
+	font: normal 120% 'trebuchet ms', sans-serif;
+	display: block;
+	height:20px;
+
+	text-decoration: none;
+	color: #fff;
+}
+
+ul.menu li.selected a{
+	color:#ADADAD;
+}
+
+ul.menu li:hover{
+	border-radius: 5px;
+	background-color: #373737;
+}
+
+.news {
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 20px;
+	background-color: #373737;
+	padding: 1px 10px 10px 10px;
+	color:#C9C9C9;
+    border-radius:10px;
+}
+
+.news h2, .news p, .news h1 {
+	font: normal 100'trebuchet ms', actor,sans-serif;
+	width: 95%;
+	margin-left: 2.5%;
+}
+.news img.small{
+	border-radius:10px;
+	width: 30%;
+	margin-left: 35%;
+}
+.news img.normal{
+	border-radius:10px;
+	width: 60%;
+	margin-left: 20%;
+}
+
+.news table{
+	weight: 60%;
+	margin-left: 20%;
+	background-color:#4E4E4E;
+	padding: 10px;
+	border-radius:10px;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans':400,700);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css');
+
+*{
+	font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
+}
+body{
+    background: rgb(52, 56, 61);
+}
+h1{
+	color: rgb(255, 255, 255);
+	margin: 20px auto 0;
+	width: 200px;
+	text-align: center;
+}
+#wrapper{
+	position: absolute;
+	width: 320px;
+	left: 50%;
+	margin-left: -160px;
+	top: 50%;
+	margin-top: -75px;
+}
+
+/* === Sign in Form === */
+#signin {
+	height: 90px;
+	width: 300px;
+	border-radius: 8px;
+	position: relative;
+}
+#signin::before {
+	display: block;
+	position: relative;
+	height: 2px;
+	background: rgb(52, 56, 61);
+	content: '';
+	top: 44px;
+	margin-left: 20px;
+	z-index: 1;
+}
+#signin input:first-of-type{
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+#signin input:last-of-type{
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+#signin  input[type="text"], #signin  input[type="password"], #signin button[type="submit"]{
+	background: rgb(28, 30, 33);
+	box-shadow: inset -100px -100px 0 rgb(28, 30, 33); /*Prevent yellow autofill color*/
+	color: rgb(52, 56, 61);
+}
+#signin  input[type="text"], #signin  input[type="password"]{
+	position: relative;
+	display: block;
+	width: 280px;
+	height: 45px;
+	border: 0;
+	outline: 0;
+	top: -2px;
+	padding: 0 0 0 20px;
+	font-weight: 700;
+}
+#signin  input[type="text"]:focus, #signin  input[type="password"]:focus{
+	color: rgb(255, 255, 255);
+}
+#signin button[type="submit"]{
+	display: block;
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	color: rgb(52, 56, 61);
+	border-radius: 50px;
+	outline: 0;
+	z-index: 2;
+	top: 19px;
+	right: -24px;
+	border: 6px solid rgb(52, 56, 61);
+	font-size: 25px;
+	text-indent: 0px;
+	padding-left: 9px;
+	padding-bottom: 3px;
+	text-align: center;
+}
+#signin button[type="submit"]:hover{
+	color: rgb(0, 126, 165);
+	text-shadow: 0 0 10px rgb(0, 126, 165);
+	cursor: pointer;
+}
+#signin p {
+	color: rgb(79, 85, 97);
+	padding: 0 20px;
+	font-weight: 700;
+	font-size: 12px;
+	margin: 5px 0 0 0;
+}
+#signin p > a{
+	color: rgb(111, 119, 135);
+	text-decoration: none;
+}
+#signin p > a:hover{
+	border-bottom: 1px solid;
+}
+
+.sing-in-return {
+    display: block;
+    margin-left:600px;
+    margin-top:500px;
+    background-color:#333ca1;
+    margin-right: 600px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.sing-in-return a{
+	display: block;
+	padding: 8px 10px 8px 50px;
+	text-decoration: none;
+	font: normal 120% 'century gothic', actor,sans-serif;
+	color:#ef9934;
+}
+
+.sing-in-return a:hover{
+	display: block;
+	padding: 8px 10px 8px 50px;
+	text-decoration: none;
+	font: normal 120% 'century gothic', actor,sans-serif;
+	color:#ef9934;
+	background-color:#10a4eb;
+	border-radius: 10px;
+}

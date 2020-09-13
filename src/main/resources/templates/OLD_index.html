@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="xmlns=http://www.sprinfgramework.org/schema/security" >
+
+<head>
+    <title>Recommendations web</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $.getJSON('http://localhost:8080/users/1', function(data) {
+                $.each(data, function(key, val) {
+                    $('#countries').append('<option value="' + val + '">' + key + '</option>');
+                });
+    });
+});
+</script>
+<body>
+<div class=header>
+    <div class = "logo">
+        <div class = "logo-text">
+            <h1>Главная</a></h1>
+        </div>
+    </div>
+    <div class = "user-info">
+        <div sec:authorize="!isAuthenticated()">
+            <div class = "user-info-form-not-auth">
+                <h1>Здравствуй, Гость.</h1>
+                <div class = "login">
+                    <a href="/login">Авторизация</a>
+                </div>
+                <div class = "sing-up">
+                    <a href="/sing-up">Регистрация</a>
+                </div>
+            </div>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+            <div class = "user-info-form">
+                <h1>Здравствуй, <div class = "user-name" sec:authentication="name"></div></h1>
+                <a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+                    <input hidden type="submit" value="Sign Out"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="topbar">
+    <a class="active" href="#home">Рекомендуемое</a>
+    <a href="#news">Новости</a>
+    <a href="#contact">Личный кабинет</a>
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="#admin">Управление данными</a>
+    </div>
+    <div class="topbar-right">
+        <a href="#search">Поиск</a>
+        <a href="#about">О нас</a>
+    </div>
+</div>
+<div sec:authorize="hasRole('ROLE_USER')">Text visible to user.</div>
+<div sec:authorize="hasRole('ROLE_ADMIN')">Text visible to admin.</div>
+</body>
+</html>
+
+

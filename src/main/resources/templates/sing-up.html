@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Nice dark sign in form</title>
+    <link rel="stylesheet" href="css/sing-up.css">
+</head>
+<body>
+<h1>Registration</h1>
+<div id="wrapper">
+    <form id="signin" method="post" th:action="@{/sing-up}" th:object="${userCreateDto}" autocomplete="off">
+        <input type="text" id="user" th:field = "*{login}" placeholder="login" />
+        <input type="text" id="userName" th:field = "*{userName}" placeholder="username"/>
+        <input type="text" id="email" th:field = "*{email}" placeholder="email"/>
+        <input type="password" id="pass" th:field = "*{password}" placeholder="password"/>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</div>
+<div class = "sing-in-return">
+    <a href = "/"> Вернуться на главную</a>
+</div>
+</body>
+</html>
+

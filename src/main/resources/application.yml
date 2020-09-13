@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        temp:
+          use_jdbc_metadata_defaults: false
+  main:
+    allow-bean-definition-overriding: true
+  security:
+    cors:
+      allowedMethods: "*"
+      allowedOrigins: "*"
+      allowedHeaders: "*"
+
+server:
+  port: 8080
+  max-http-header-size: 15KB
+
+
+app:
+  datasource:
+    recommendations:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/adviser
+      username: postgres
+      password: postgres
+  update-time: 0 0 1 * * *

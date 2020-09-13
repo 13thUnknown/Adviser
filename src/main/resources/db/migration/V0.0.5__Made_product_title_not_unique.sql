@@ -1,0 +1,1 @@
+ALTER TABLE products DROP CONSTRAINT uk_products_title;

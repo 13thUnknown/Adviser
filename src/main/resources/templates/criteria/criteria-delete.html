@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Adviser</title>
+</head>
+<body>
+<nav class = "navbar navbar-expand-md navbar-dark bg-dark">
+    <div class = "container-fluid">
+        <div class = "navbar-header">
+            <a href="/index" class = "navbar-brand"> Adviser </a>
+        </div>
+        <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class = "nav-link" href="/index">Главная</a>
+                </li>
+                <li><a class = "nav-link" href="/news">Новости</a></li>
+                <li><a class = "nav-link" href="/user/me">Личный кабинет</a></li>
+                <div sec:authorize="hasRole('ROLE_ADMIN')">
+                    <li><a class = "nav-link" href="/control">Управление данными</a></li>
+                </div>
+            </ul>
+            <div sec:authorize="!isAuthenticated()">
+                <ul class="nav navbar-nav ml-auto">
+                    <form class = "navbar-from form-inline" th:action="@{/login}" method = "post" autocomplete="off">
+                        <div class="form-group">
+                            <input type = "text" name="username" placeholder="login" class = "form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type = "password" name="password" placeholder="password" class = "form-control">
+                        </div>
+                        <button type = "submit" class = "btn btn-success">Sing in</button>
+                    </form>
+                </ul>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class = "text-danger list-inline-item"><a class="nav-item nav-link disabled text-secondary" href="#">Привет, </a></li>
+                    <li><a class = "text-danger nav-link" href="/user/me">Mike</a></li>
+                    <form class = "navbar-from form-inline" name="logoutForm" th:action="@{/logout}" method="post">
+                        <button type = "submit" class = "btn btn-success" >Log out</button>
+                    </form>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<form class="form" th:action="@{/criteria/delete}" method = "post" th:object="${criteriaDto}" autocomplete="on">
+    <h1 class="h3 mb-3 font-weight-normal">Удалить критерий</h1>
+    <label for="inputTitle" class="sr-only">Название</label>
+    <input type="text" id="inputTitle" th:field="*{title}" class="form-control" placeholder="Title" required autofocus>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Удалить</button>
+    <a class = "btn btn-lg btn-danger btn-block" href="/control">Назад</a>
+    <p class="mt-5 mb-3 text-muted">Adviser &copy; 2020</p>
+</form>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

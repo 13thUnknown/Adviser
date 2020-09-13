@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Nice dark sign in form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Sign In Form</h1>
+<div id="wrapper">
+    <form id="signin" method="post" th:action="@{/login}" autocomplete="off">
+        <input type="text" id="user" name="username" placeholder="username" />
+        <input type="password" id="pass" name="password" placeholder="password" />
+        <button type="submit">></button>
+        <p>forgot your password? <a href="#">click here</a></p>
+    </form>
+</div>
+<div class = "sing-in-return">
+    <a href = "/"> Вернуться на главную</a>
+</div>
+</body>
+</html>
